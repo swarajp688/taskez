@@ -3,7 +3,7 @@ import HomeWrapper from "../styles/HomeWrapper";
 import homeSvg from "../svg/Home.svg";
 import Login from "./Login";
 import Signup from "./Signup";
-const Home = () => {
+const Home = ({setRemember,remember}) => {
   const [isLogin, setIsLogin] = useState(true);
   return (
     <HomeWrapper>
@@ -26,7 +26,7 @@ const Home = () => {
               Signup
             </span>
           </div>
-          {isLogin ? <Login /> : <Signup />}
+          {isLogin ? <Login remember={remember} setRemember={setRemember}/> : <Signup />}
         </div>
       </div>
     </HomeWrapper>
