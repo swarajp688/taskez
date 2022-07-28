@@ -11,6 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 const {mongoConnect} = require('./services/mongo');
+const userRouter = require('./routes');
+app.use('/',userRouter);
+
 async function startServer (){
     await mongoConnect();
     app.listen(1000,()=>{
