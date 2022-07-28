@@ -77,6 +77,7 @@ async function login(req, res) {
 }
 
 const generateToken = (id) => {
+  console.log('Token',process.env.TOKEN);
   return jwt.sign({ id }, process.env.TOKEN);
 };
 module.exports = {
